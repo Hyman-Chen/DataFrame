@@ -1,7 +1,9 @@
 #include <stdio.h>
+#include "Header.h"
 #define ElementType int
 #define Maxsize 10
 #define ERROR -1
+
 typedef struct SNode *Stack;
 struct SNode{
     ElementType Data[Maxsize];
