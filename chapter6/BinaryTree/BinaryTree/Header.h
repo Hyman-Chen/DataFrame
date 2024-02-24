@@ -86,25 +86,27 @@ BinTree Insert(ElementType X, BinTree BST){
     }
     return BST;
 }
-////Delete
-//BinTree Delete(ElementType X, BinTree BST){
-//    Position Tmp;
-//    if (!BST) printf("要删除的元素为找到");
-//    else if (X<BST->Data)
-//        BST->Left = Delete(X, BST);
-//    else if (X>BST->Data)
-//        BST->Right = Delete(X, BST);
-//    else
-//        if (BST->Left && BST->Right){
-//            Tmp = FindMin(BST->Right);
-//            BST->Data = Tmp->Data;
-//        }
-//        else Tmp = BST;
-//        if (BST->Left) BST = BST->Left;
-//         else if (BST->Right) BST = BST->Right;
-//        
-//        
-//}
+//Delete??????????
+BinTree Delete(ElementType X, BinTree BST){
+    Position Tmp;
+    if (!BST) printf("要删除的元素未找到\n");
+    else if (X<BST->Data)
+        BST->Left = Delete(X, BST->Left);
+    else if (X>BST->Data)
+        BST->Right = Delete(X, BST->Right);
+    else
+        if (BST->Left && BST->Right){
+            Tmp = FindMin(BST->Right);
+            BST->Data = Tmp->Data;
+            BST->Right = Delete(BST->Data, BST->Right);
+        }else{
+            Tmp = BST;
+            if (BST->Left) BST = BST->Left;
+            else if (BST->Right) BST = BST->Right;
+            free(Tmp);
+        }
+    return BST;
+}
 
 //// 构造空树
 //void InitTree(Tree *T){
