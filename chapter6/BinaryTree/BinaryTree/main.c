@@ -11,8 +11,8 @@
 
 int main(int argc, const char * argv[]) {
     // 创建一个数T
-    Tree T = malloc(sizeof(struct TreeNode));
+    BinTree T = malloc(sizeof(struct TreeNode1));
     T->Data = 0;
-    T->Left = NULL;
+    T->Left = T->Right = NULL;
     return 0;
 }
