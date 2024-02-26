@@ -30,4 +30,13 @@ MaxHeap Create(int MaxSize){
     H -> Elements[0] = MaxData;
     return H;
 }
+// 最大堆的插入
+void Insert(MaxHeap H,ElementType item){
+    int i;
+    // 这里省略判断最大堆有没有满的操作；
+    i = ++H->Size;
+    for (;H->Elements[i/2]<item;i/=2 ) H->Elements[i]=H->Elements[i/2];
+    H->Elements[i] = item;
+}
+
 #endif /* Header_h */
