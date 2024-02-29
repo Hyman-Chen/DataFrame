@@ -27,4 +27,16 @@ void Bubble_Sort(ElementType A[], int N)
         }
     }
 }
+
+// 插入排序
+void Insertion_sort(ElementType A[], int N){
+    int p,Tmp,i;
+    for (p=1;p<N;p++){
+        Tmp = A[p]; /* 摸下下一张牌 */
+        for (i=p;i>0&&A[i-1]>Tmp;i--){
+            A[i] = A[i-1];
+        }
+        A[N] = Tmp; /* 新牌落位 */
+    }
+}
 #endif /* Header_h */
