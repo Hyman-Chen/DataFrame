@@ -39,4 +39,18 @@ void Insertion_sort(ElementType A[], int N){
         A[N] = Tmp; /* 新牌落位 */
     }
 }
+// 原始希尔排序
+void Shell_sort(ElementType A[], int N)
+{   int D,P,Tmp,i;
+    for (D = N/2;D>0;D/=2)
+    {
+        for (P=0;P<N;P++)
+        {
+            Tmp = A[P];
+            for (i=P; i>=D&&A[i-D]>Tmp;i-=D)
+                A[i] = A[i-D];
+            A[i] = Tmp;
+        }
+    }
+}
 #endif /* Header_h */
