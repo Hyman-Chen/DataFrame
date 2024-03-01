@@ -14,6 +14,7 @@
 
 
 // 用邻接矩阵表示图
+// 邻接矩阵表示的图适用于存放稠密图，定义图结点时，结构体内有四个数据元素，分别为当前边的条数ne、当前结点数量nv、结点一维数组data和边的二维数组G。
 typedef int Vertex;
 typedef int DataType;
 typedef int WeightType;
@@ -24,6 +25,7 @@ struct GNode{
     WeightType G[MaxVertexNum][MaxVertexNum];
     DataType Data[MaxVertexNum]; /* 存顶点的数据 */
 };
+
 typedef PtrToGNode MGraph; /* 以邻接矩阵存储的图类型 */
 
 MGraph CreateGraph(int VertexNum)
